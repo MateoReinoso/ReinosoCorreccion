@@ -2,10 +2,10 @@
 			<ul>
 				<li><a href="#">Inicio</a></li>
 				<li class="principal">
-					<a href="#">Usuarios</a>
+					<a href="#">Modulos</a>
 					<ul>
-						<li><a href="#">Nuevo Usuario</a></li>
-						<li><a href="#">Lista de Usuarios</a></li>
+						<li><a href="#">Nuevo Modulo</a></li>
+						<li><a href="#">Lista de Modulos</a></li>
 					</ul>
 				</li>
 				<li class="principal">
