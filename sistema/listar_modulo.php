@@ -1,5 +1,34 @@
-<?php
-    include "service/conexion.php";
+<?php 
+
+include './service/moduloService.php';
+session_start();
+
+$nombre = "";
+$estado = "";
+$codModulo = "";
+$accion = "Agregar";
+$eliminarMod = "Eliminar";
+$moduloService = new ModuloService();
+
+if (isset($_POST["accion"]) && ($_POST["accion"] == "Agregar")) {
+    $moduloService->insert($_POST["codModulo"], $_POST["nombre"], $_POST["estado"]);
+} 
+else if (isset($_POST["accion"]) && ($_POST["accion"] == "Modificar")) {
+    $moduloService->update($_POST["nombre"],$_POST["estado"],$_POST["codModulo"]);
+} 
+else if (isset($_GET["update"])) {
+    $modulo = $moduloService->findByPK($_GET["update"]);
+    if ($modulo!=null){
+        $codModulo = $modulo["COD_MODULO"];
+        $nombre = $modulo["NOMBRE"];
+        $estado = $modulo["ESTADO"];
+        $accion = "Modificar";
+    }
+} 
+else if (isset($_POST["eliminarMod"])) {
+    $moduloService->delete($_POST["eliminarMod"]);
+}
+$result = $moduloService->findAll();
 
 ?>
 
@@ -9,52 +38,53 @@
 <head>
     <meta charset="UTF-8">
     <?php include "includes/scripts.php"; ?>
-    <title>Lista Modulos</title>
+    <title>Correccion Examen</title>
 </head>
 
 <body>
     <?php include "includes/header.php"; ?>
-    <section id="container">
-        <h1>Lista de Modulos</h1>
-        <hr>
-        <a href="registro_modulo.php" class="btn_new">Crear Modulo</a>
-        <hr>
-        <table>
-            <tr>
-                <th>CODIGO MODULO</th>
-                <th>NOMBRE</th>
-                <th>ESTADO</th>
-                <th>ACCIONES</th>
-            </tr>
-
-            <?php 
-                $est = 'ACT';
-                $query = mysqli_query($conection, "SELECT * FROM seg_modulo WHERE ESTADO='$est'");
-
-                $result  = mysqli_num_rows($query);
-
-                if ($result > 0) {
-                    while ($data = mysqli_fetch_array($query)) {
-                    ?>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div class="card-body">
+        <br>
+        <br>
+        <H1>Agregar Modulo</H1>
+            <div class="table-responsive">
+                <form name="forma" id="forma" method="post" action="registro_modulo.php">
+        
+                    <table border="1" id="t01" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                
                         <tr>
-                            <td><?php echo $data['COD_MODULO'] ?></td>
-                            <td><?php echo $data['NOMBRE'] ?></td>
-                            <td><?php echo $data['ESTADO'] ?></td>
-                            <td>
-                                <a class="material-icons" class="link_delete" href="eliminar_modulo.php?id=<?php echo $data['COD_MODULO'] ?>">ELIMINAR</a>
-                            </td>
-                            
+                            <th class="text-center">COD_MODULO</th>
+                            <th class="text-center">NOMBRE</th>
+                            <th class="text-center">ESTADO</th>
                         </tr>
-                        <?php 
-                    }
-                }
-            ?>
+                        <?php
+                    
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
 
-
-        </table>
-
-
-    </section>
+                        <tr>
+                            <td class="text-center"><a
+                                    href="index.php?update=<?php echo $row["COD_MODULO"]; ?>"><?php echo $row["COD_MODULO"]; ?></a>
+                            </td>
+                            <td class="text-center"><?php echo $row["NOMBRE"]; ?></td>
+                            <td class="text-center"><?php echo $row["ESTADO"]; ?></td>
+                        </tr>
+                        <?php
+                        }
+                    } 
+                    else { ?>
+                        <tr>
+                            <td colspan="4" class="text-center">NO HAY DATOS</td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
 
     <?php include "includes/footer.php"; ?>
 </body>
