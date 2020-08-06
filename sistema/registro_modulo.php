@@ -101,11 +101,12 @@ $result = $moduloService->findAll();
                                     value="<?php echo $nombre ?>" maxlength="100" size="25" required></td>
                         </tr>
                         <tr>
-                            <td><label id="lblNombre" for="estado">Estado: </label></td>
+                        <td><label id="lblEstado" for="estado">Estado: </label></td>
                             <td>
                                 <select class="custom-select" id="estado" name="estado">
                                     <option hidden selected><?php echo $estado ?></option>
-                                    <option disabled><?php echo $estado ?></option>
+                                    <option value="ACT">Activo</option>
+                                    <option value="INA">Inactivo</option>
                                 </select>
                             </td>
                         </tr>

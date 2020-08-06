@@ -86,11 +86,11 @@ $result = $moduloService->findAll();
                             <tr>
                                 <td colspan="3" style="width: 1080px;">&nbsp;</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-icon-split shadow" name="eliminar"
-                                        onclick="eliminacionModulo()">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span><span class="text"><?php echo $eliminarMod?></span></button>
+                                    
+                                    <button type="button" class="btn_save" onclick="eliminacionModulo()">
+                                        <span>
+                                        <img src="img/delete.png" style="width:25px; height:25px" alt="">
+                                        </span><span><?php echo $eliminarMod?></span></button>
                                 </td>
                             </tr>
                         </table>

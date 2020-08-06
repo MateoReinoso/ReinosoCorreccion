@@ -6,6 +6,7 @@
 					<ul>
 						<li><a href="registro_modulo.php">Nuevo Modulo</a></li>
 						<li><a href="listar_modulo.php">Lista de Modulos</a></li>
+						<li><a href="lis_modulo.php">Lista de Total de Modulos</a></li>
 						<li><a href="eliminar_modulo.php">Editar o Elimianar Modulos</a></li>
 					</ul>
 				</li>

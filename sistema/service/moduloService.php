@@ -1,11 +1,14 @@
 <?php
-//CONEXION
 include 'mainService.php';
 
 class ModuloService extends MainService {
 
     function findAll(){
         return $this->conex->query("SELECT COD_MODULO, NOMBRE, ESTADO FROM SEG_MODULO WHERE ESTADO LIKE '%ACT%'");
+    }
+
+    function fin(){
+        return $this->conex->query("SELECT COD_MODULO, NOMBRE, ESTADO FROM SEG_MODULO");
     }
 
     function findByPK($codModulo) {
