@@ -10,7 +10,7 @@
 <body>
     <?php include "includes/header.php"; ?>
     <section id="container">
-        <h1>Correcion Examen Segundo Parcial</h1>
+        <h1>Correcion Examen </h1>
     </section>
 
 	<?php include "includes/footer.php"; ?>

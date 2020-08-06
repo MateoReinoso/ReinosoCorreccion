@@ -1,11 +1,12 @@
 <nav>
 			<ul>
-				<li><a href="#">Inicio</a></li>
+				<li><a href="index.php">Inicio</a></li>
 				<li class="principal">
 					<a href="#">Modulos</a>
 					<ul>
-						<li><a href="#">Nuevo Modulo</a></li>
-						<li><a href="#">Lista de Modulos</a></li>
+						<li><a href="registro_modulo.php">Nuevo Modulo</a></li>
+						<li><a href="listar_modulo.php">Lista de Modulos</a></li>
+						<li><a href="eliminar_modulo.php">Editar Modulos</a></li>
 					</ul>
 				</li>
 				<li class="principal">

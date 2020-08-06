@@ -1,11 +1,11 @@
 <header>
     <div class="header">
 
-        <h1>Sistema Facturación</h1>
+        <h1>Correcion Examen</h1>
         <div class="optionsBar">
-            <p>Quito-Ecuador, <?php echo fechaC(); ?> </p>
+            <p>Cayambe-Ecuador, <?php echo fechaC(); ?> </p>
             <span>|</span>
-            <span class="user">Julio Estrada</span>
+            <span class="user">Daniel Mateo Reinoso Rivadeneira</span>
             <img class="photouser" src="img/user.png" alt="Usuario">
         </div>
     </div>
