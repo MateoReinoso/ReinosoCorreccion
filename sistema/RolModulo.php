@@ -89,7 +89,7 @@ $result2 = $moduloService->findAll();
                           
                             <tr>
                                 <th class="text-center">MODULO</th>
-                                <th class="text-center">ELIM</th>
+                                <th class="text-center">ELIMINAR</th>
                             </tr>
                             <?php
                             if(isset($_POST["aceptar"])){

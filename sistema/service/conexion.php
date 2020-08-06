@@ -2,14 +2,17 @@
 class Connection {
 
     function getConection(){
-        $conex = mysqli_connect("127.0.0.1", "root", "", "examen");
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'examen';
+        $conex = mysqli_connect($host, $user, $pass, $db);
         if (!$conex) {
-            echo "<p> Error: No se pudo conectar a MySQL." . PHP_EOL;
-            echo "errno de depuración: " . mysqli_connect_errno();
-            echo "error de depuración: " . mysqli_connect_error();
-            echo "</p>";
-            exit;
+            echo "Error en la conexion";
         }
+        // else {
+        //     echo "Conexion establecida";
+        // }
         return $conex;
     }
 
