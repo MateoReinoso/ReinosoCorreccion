@@ -19,10 +19,9 @@
 					</ul>
 				</li>
 				<li class="principal">
-					<a href="#">Proveedores</a>
+					<a href="#">Modulo Rol</a>
 					<ul>
-						<li><a href="#">Nuevo Proveedor</a></li>
-						<li><a href="#">Lista de Proveedores</a></li>
+						<li><a href="RolModulo.php">Gestion Rol Modulo</a></li>
 					</ul>
 				</li>
 			</ul>
