@@ -71,10 +71,10 @@
                         <table border="1" id="t01" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <!-- TÍTULOS -->
                             <tr>
-                                <th class="text-center">COD_MODULO</th>
+                                <th class="text-center">CODIGO MODULO</th>
                                 <th class="text-center">NOMBRE</th>
                                 <th class="text-center">ESTADO</th>
-                                <th class="text-center">ELIM</th>
+                                <th class="text-center">ELIMINAR</th>
                             </tr>
                             <?php
                             /* GUARDAR EN RESULT LOS DATOS DE LA TABLA */
@@ -84,7 +84,7 @@
                             
                             <!-- IMPRESIÓN DE LA TABLA CON LOS DATOS DESDE LA BASE -->
                                     <tr>
-                                        <td class="text-center"><a href="index.php?update=<?php echo $row["COD_MODULO"]; ?>"><?php echo $row["COD_MODULO"]; ?></a>
+                                        <td class="text-center"><a href="registro_modulo.php?update=<?php echo $row["COD_MODULO"]; ?>"><?php echo $row["COD_MODULO"]; ?></a>
                                         </td>
                                         <td class="text-center"><?php echo $row["NOMBRE"]; ?></td>
                                         <td class="text-center"><?php echo $row["ESTADO"]; ?></td>
@@ -101,63 +101,7 @@
                                 </tr>
                             <?php } ?>
                         </table>
-                        <!-- hidden ES PARA QUE LOS USUARIOS NO PUEDAN VER NI MODIFICAR DATOS CUANDO SE ENVÍA EN UN FORMULARIO, ESPECIALMENTE ID -->
-                        <input type="hidden" name="codModulo" value="<?php echo $codModulo ?>">
-                        <!-- CAMPOS PARA NUEVO MODULO -->
-                        <?php if($accion=="Agregar") {?>
-                        <table border="0">
-                            <tr>
-                                <td colspan=2 class="text-primary"><h1>Nuevo Modulo</h1></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblModulo" for="codModulo">Código del Módulo: </label></td>
-                                <td><input type="text" class="form-control" name="codModulo" id="codModulo" value="<?php echo $codModulo ?>" required></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblNombre" for="nombre">Nombre: </label></td>
-                                <td><input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre ?>" maxlength="100" size="25" required></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblEstado" for="estado">Estado: </label></td>
-                                <td>
-                                <select class="custom-select" id="estado" name="estado">
-                                    <option hidden selected><?php echo $estado ?></option>
-                                    <option value="ACT">Activo</option>
-                                    <option value="INA">Inactivo</option>
-                                </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan=2><input type="submit" name="accion" value="<?php echo $accion ?>"></td>
-                            </tr>
-                        </table>
-                        <?php } else{?>
-                        <table border="0">
-                            <tr>
-                                <td colspan=2><strong>Modificar Modulo</strong></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblModulo" for="codModulo">Código del Módulo: </label></td>
-                                <td><input type="text" class="form-control" name="codModulo" id="codModulo" disabled value="<?php echo $codModulo ?>" required></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblNombre" for="nombre">Nombre: </label></td>
-                                <td><input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre ?>" maxlength="100" size="25" required></td>
-                            </tr>
-                            <tr>
-                                <td><label id="lblNombre" for="estado">Estado: </label></td>
-                                <td>
-                                <select class="custom-select" id="estado" name="estado">
-                                    <option hidden selected><?php echo $estado ?></option>
-                                    <option disabled ><?php echo $estado ?></option>
-                                </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan=2><input type="submit" name="accion" value="<?php echo $accion ?>"></td>
-                            </tr>
-                        </table>
-                        <?php }?>
+                        
                     </form>
                 </div>
             </div>
