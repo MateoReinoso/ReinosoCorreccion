@@ -32,9 +32,7 @@ else if (isset($_GET["update"])) {
         $accion = "Modificar";
     }
 } 
-else if (isset($_POST["eliminarMod"])) {
-    $moduloService->deleteFun($_POST["eliminarMod"]);
-}
+
 $result = $moduloService->findAll();
 
 ?>
@@ -87,7 +85,7 @@ $result = $moduloService->findAll();
                             cellspacing="0">
 
                             <tr>
-                                <th class="text-center">CÓDIGO</th>
+                                <th class="text-center">CÓDIGO MODULO</th>
                                 <th class="text-center">NOMBRE</th>
                                 <th class="text-center">URL</th>
                                 <th class="text-center">DESCRIPCION</th>
@@ -101,7 +99,7 @@ $result = $moduloService->findAll();
                     
                             <tr>
                                 <td class="text-center"><a
-                                        href="modFun.php?update=<?php echo $row1["COD_FUNCIONALIDAD"]; ?>"
+                                        href="editar_Function.php?update=<?php echo $row1["COD_FUNCIONALIDAD"]; ?>"
                                         class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>

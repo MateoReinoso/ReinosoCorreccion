@@ -54,7 +54,7 @@ $result = $moduloService->findAll();
                     <table border="1" id="t01" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 
                         <tr>
-                            <th class="text-center">COD_MODULO</th>
+                            <th class="text-center">CODIGO MODULO</th>
                             <th class="text-center">NOMBRE</th>
                             <th class="text-center">ESTADO</th>
                         </tr>
